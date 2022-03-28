@@ -57,6 +57,14 @@
                 </div>
             `;
         document.querySelector('.offers').innerHTML = offers;
+        
+        colorInterval = setInterval(setColor, 2000);
+ 
+        function setColor() {
+            const product = document.getElementsByClassName("product");
+            product[0].style.borderColor = "yellow";
+        }
+        
     }
     });
 </script>
