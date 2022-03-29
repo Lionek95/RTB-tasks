@@ -12,9 +12,15 @@
         color: #F05454;
     }
 
+    #counter {
+        display: flex;
+        justify-content: center;
+    }
+
     p {
         font-size: 3rem;
         color: #fff;
+        margin: 0 auto;
     }
 
     .logo {
@@ -26,7 +32,12 @@
 <body>
     <img class="logo" src="logo_rtb.png">
     <h1>Do końca promocji pozostało:</h1>
-    <p id="counter"></p>
+    <div id="counter">
+        <p id="days"></p>
+        <p id="hours"></p>
+        <p id="minutes"></p>
+        <p id="seconds"></p>
+    </div>
 </body>
 
 <script>
@@ -43,12 +54,25 @@ var promoCounter = setInterval(function() {
   var minutes = Math.floor((finishDate % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((finishDate % (1000 * 60)) / 1000);
     
-  document.getElementById("counter").innerHTML = days + "dni " + hours + "godzin "
-  + minutes + "minut " + seconds + "sekund ";
+  document.getElementById("days").innerHTML = days + "dni";
+  document.getElementById("hours").innerHTML = hours + "godzin";
+  document.getElementById("minutes").innerHTML = minutes + "minut";
+  document.getElementById("seconds").innerHTML = seconds + "sekund";
+  
+ if (days <= 0) {
+    document.getElementById("days").style.display = 'none';
+  }
+
+  if (hours <= 0) {
+    document.getElementById("hours").style.display = 'none';
+  }
     
-  if (minutes = 0) {
-    clearInterval(promoCounter);
-    document.getElementById("counter").setAttribute("display", "none");
+  if (minutes <= 0) {
+    document.getElementById("minutes").style.display = 'none';
+  }
+
+  if (finishDate <= 0) {
+    document.getElementById("counter").style.display = 'none';
   }
 }, 1000);
 </script>
