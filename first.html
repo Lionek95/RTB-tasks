@@ -58,30 +58,39 @@
             `;
         document.querySelector('.offers').innerHTML = offers;
     
+        let counter = 0
 
-    let counter = 1;
-    var loop;
-    loop = setInterval(start,2000);
-    function start()
+        setTimeout(() => {
+            if (counter < 4) {
+                document.getElementById("product"+counter).style.borderColor = "a8a8a8";
+                counter++;
+            }
+            else {
+                secondcounter = 0;
+            }
+            setInterval(function() {
+            if (counter < 4) {
+                document.getElementById("product"+counter).style.borderColor = "a8a8a8";
+                counter++;
+            }
+            else {
+                secondcounter = 0;
+            }
+            }, 2000)
+        }, 4000)
 
-    {
-        document.getElementById("product"+counter).style.borderColor = "yellow";
-            counter++;
-            if(counter > 3){
-            counter = 1;
+        let secondcounter = 0;
+
+        setInterval(function(){ 
+            if (secondcounter < 4) {
+                document.getElementById("product"+secondcounter).style.borderColor = "ffff00";
+                secondcounter++;
+            } else {
+                secondcounter = 0;
+            }
+        }, 2000);
+
     }
-
-    setTimeout(function(){
-        document.getElementById("product"+counter).style.borderColor = "a8a8a8";
-        counter++;
-        if(counter > 3){
-        counter = 1;
-        }
-    }, 2000);
-
-    }
-        
-}
 });
 
 </script>
