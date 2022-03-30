@@ -1,0 +1,36 @@
+.banner {
+    width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.offers {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto; 
+    gap: 5px 5px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.product {
+    width: 142px;
+    height: 92px;
+    justify-self: stretch;
+    text-align: center;
+    border: 0.3px solid #a8a8a8;
+}
+
+.image {
+    height: 70%;
+}
+
+p {
+    font-weight: 700;
+    margin: 0;
+}

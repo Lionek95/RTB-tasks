@@ -1,46 +1,3 @@
-<style>
-    body {
-        text-align: center;
-        width: 800px;
-        margin: 0 auto;
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #5C527F;
-    }
-
-    h1 {
-        font-size: 2rem;
-        color: #F05454;
-    }
-
-    #counter {
-        display: flex;
-        justify-content: center;
-    }
-
-    p {
-        font-size: 3rem;
-        color: #fff;
-        margin: 0 auto;
-    }
-
-    .logo {
-        width: 100%;
-        margin: 10px auto;
-    }
-</style>
-
-<body>
-    <img class="logo" src="logo_rtb.png">
-    <h1>Do końca promocji pozostało:</h1>
-    <div id="counter">
-        <p id="days"></p>
-        <p id="hours"></p>
-        <p id="minutes"></p>
-        <p id="seconds"></p>
-    </div>
-</body>
-
-<script>
 var promoDate = new Date("Apr 4, 2022 23:59:59").getTime();
 
 var promoCounter = setInterval(function() {
@@ -87,4 +44,3 @@ var promoCounter = setInterval(function() {
     document.getElementById("counter").style.display = 'flex';
   }
 }, 1000);
-</script>
