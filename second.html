@@ -22,7 +22,7 @@
         display: flex;
     }
 
-    .slides input{
+    input {
         display: none;
     }
 
@@ -32,6 +32,7 @@
         border: 0.3px solid #a8a8a8;
         width: 33%;
         transition: 2s;
+        margin-right: 5%;
     }
 
     .navigation-manual{
@@ -47,11 +48,11 @@
     }
   
     #radio2:checked ~ .first{
-        margin-left: -33%;
+        margin-left: -38%;
     }
   
     #radio3:checked ~ .first{
-        margin-left: -66%;
+        margin-left: -74%;
     }
 
     .navigation-auto{
@@ -64,18 +65,20 @@
     .image {
         width: 150px;
         height: auto;
+        max-height: 250px;
         margin: 10% auto;
     }
 
     h2 {
         font-weight: 400;
-        margin: 60% auto;
+        font-size: 18px;
+        margin: 50% auto;
     }
 
     p {
         text-align: center;
         font-weight: 700;
-        margin-top: 80%;
+        margin-top: 70%;
     }
 
     button {
@@ -90,14 +93,7 @@
 </style>
 
 <div class="banner">
-    <div class="slides">
-        <input type="radio" name="radio-btn" id="radio1">
-        <input type="radio" name="radio-btn" id="radio2">
-        <input type="radio" name="radio-btn" id="radio3">
-        <div class="slide" id="slide1"></div>
-        <div class="slide" id="slide2"></div>
-        <div class="slide" id="slide3"></div>
-    </div>
+    <div class="slides"></div>
     <div class="navigation-auto"></div>
       <div class="navigation-manual">
         <label for="radio1"></label>
@@ -123,6 +119,23 @@
                 </div>
             `;
         document.querySelector(".slides").innerHTML = slides;
+
+        let radioFirst = document.createElement("input");
+        radioFirst.type = "radio";
+        radioFirst.name = "radio-btn";
+        radioFirst.id = "radio1";
+
+        let radioSecond = document.createElement("input");
+        radioSecond.type = "radio";
+        radioSecond.name = "radio-btn";
+        radioSecond.id = "radio2";
+
+        let radioThird = document.createElement("input");
+        radioThird.type = "radio";
+        radioThird.name = "radio-btn";
+        radioThird.id = "radio3";
+
+        document.querySelector(".slides").prepend(radioFirst, radioSecond, radioThird);
 
         document.querySelector("#slide1").classList.add("first");
     }
