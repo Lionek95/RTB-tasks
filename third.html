@@ -62,17 +62,29 @@ var promoCounter = setInterval(function() {
  if (days <= 0) {
     document.getElementById("days").style.display = 'none';
   }
+  else {
+    document.getElementById("days").style.display = 'block';
+  }
 
   if (hours <= 0) {
     document.getElementById("hours").style.display = 'none';
+  }
+  else {
+    document.getElementById("hours").style.display = 'block';
   }
     
   if (minutes <= 0) {
     document.getElementById("minutes").style.display = 'none';
   }
+  else {
+    document.getElementById("minutes").style.display = 'block';
+  }
 
   if (finishDate <= 0) {
     document.getElementById("counter").style.display = 'none';
+  }
+  else {
+    document.getElementById("counter").style.display = 'flex';
   }
 }, 1000);
 </script>
