@@ -1,4 +1,4 @@
-fetch('http://rekrutacjartb.pl/developer/banner.json')
+fetch("http://rekrutacjartb.pl/developer/banner.json", {mode: "cors"})
     .then(response => response.json())
     .then(result => {
         let slides = ""
