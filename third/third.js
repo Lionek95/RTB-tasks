@@ -1,4 +1,4 @@
-var promoDate = new Date("Apr 4, 2022 23:59:59").getTime();
+var promoDate = new Date("Apr 9, 2022 23:59:59").getTime();
 
 var promoCounter = setInterval(function() {
 
