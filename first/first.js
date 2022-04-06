@@ -11,37 +11,36 @@ fetch("http://rekrutacjartb.pl/developer/banner.json", {mode: "cors"})
              `;
          document.querySelector('.offers').innerHTML = offers;
 
-         let counter = 0
-
-         setTimeout(function() {
-             if (counter < 4) {
-                 document.getElementById("product"+counter).style.borderColor = "a8a8a8";
-                 counter++;
-             }
-             else {
-                 secondcounter = 0;
-             }
-             setInterval(function() {
-             if (counter < 4) {
-                 document.getElementById("product"+counter).style.borderColor = "a8a8a8";
-                 counter++;
-             }
-             else {
-                 secondcounter = 0;
-             }
-             }, 2000)
-         }, 4000)
-
-         let secondcounter = 0;
-
-         setInterval(function(){ 
-             if (secondcounter < 4) {
-                 document.getElementById("product"+secondcounter).style.borderColor = "ffff00";
-                 secondcounter++;
-             } else {
-                 secondcounter = 0;
-             }
-        }, 2000);
-
+        let animation = anime.timeline({
+            duration: 2000, 
+            easing: 'easeInOutSine',  
+            loop: true
+          });           
+            
+          animation.add({
+            targets: '#product0',
+            keyframes: [
+              {borderColor: 'ffff00' },
+              {borderColor: 'a8a8a8'}
+            ]
+          }).add({
+            targets: '#product1',
+            keyframes: [
+              {borderColor: 'ffff00' },
+              {borderColor: 'a8a8a8'}
+            ]
+          }, '-=100').add({
+            targets: '#product2',
+            keyframes: [
+              {borderColor: 'ffff00' },
+              {borderColor: 'a8a8a8'}
+            ]
+          }, '-=200').add({
+            targets: '#product3',
+            keyframes: [
+              {borderColor: 'ffff00' },
+              {borderColor: 'a8a8a8'}
+            ]
+        }, '-=300');
     }
 });
